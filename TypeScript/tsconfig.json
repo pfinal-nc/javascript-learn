@@ -1,0 +1,6 @@
+{
+    "files": ["ts_base.ts"],
+    "compilerOptions": {
+      "outFile": "dist/app.js"
+    }
+}
