@@ -45,3 +45,4 @@ console.log(array)
 var multi:number[][] = [[1, 2, 3], [4, 5, 6]];
 
 console.log(multi[0][1]) // 2
+
