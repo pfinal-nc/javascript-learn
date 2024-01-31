@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@lunisolar/plugin-fetalgod": "^0.1.4",
+    "lunisolar": "^2.4.0"
+  }
+}
