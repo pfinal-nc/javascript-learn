@@ -154,7 +154,18 @@ promise_t.then(function(value) { console.log(value) }).catch(function(error) { c
 // 1) 只有p1,p2,p3的状态都变成 fuifilled,p的状态才会变成 fulfilled，此时p1,p2,p3的返回值组成一个数组, 传递给p的回调函数.
 // 2)  只要p1,p2,p3之中有一个被 rejected, p的状态就变成 rejected 此时第一个被 reject的实例的返回值, 会传递给 p 的回调函数.
 
+// 下面是一个具体的例子:
+// 生成一个具体的例子:
+const promise_d = [2,3,5,7,11,13].map(function(id) {
+    return getJson('/post'+id+'.json');
+});
 
+Promise.all(promise_d).then(function(posts) {
+    
+}).catch(function(reason) {
+    
+});
+// 上面代码中, promises 是包含 6 个Promise 实例的数组, 只有这 6 个实例的状态都变成 
 
 
 
