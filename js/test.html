@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>a</div>
+        <div>c</div>
+        <div>d</div>
+    </div>
+</body>
+<script>
+    let divs = document.querySelector('#app div');
+    [...divs].map(function(div){
+        console.log(div.innerText);
+        div.innerText = 'hello world';
+    })
+    divs.map((item)=>{
+        console.log(item.innerText);
+        item.innerText = 'hello world';
+    })
+</script>
+</html>
