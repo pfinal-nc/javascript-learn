@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div desc="PFinalClub">PFinalClub</div>
+    <div desc="friday-go.icu">Blog</div>
+</body>
+<script>
+    const divMap = new Map();
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div=>{
+        divMap.set(div, {
+            content: div.getAttribute("desc")
+        });
+    });
+    divMap.forEach((config,elem)=>{
+        elem.addEventListener("click", function() {
+            alert(divMap.get(this).content);
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>pfinalclub</div>
+    <div>pfinalcms</div>
+</body>
+<script>
+    const pf = new WeakMap();
+    document.querySelectorAll('div').forEach((item)=>pf.set(item,item.innerHTML))
+    console.log(pf)
+</script>
+</html>
