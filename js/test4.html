@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            width: 100vw;
+            height: 100vh;
+            font-size: 3em;
+            padding: 30px;
+            transition: 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #34495e;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <button>PFinalClub</button>
+    <div id="app">
+        friday-go.icu
+    </div>
+    <script>
+        document.querySelector("button").addEventListener("click",function(event){
+            console.log(event.target.innerHTML + this.url);
+        }.bind({url:"friday-go.icu"}))
+
+        function Color(elem) {
+            this.elem = elem;
+            this.colors = ["#74b9ff", "#ffeaa7", "#fab1a0", "#fd79a8"];
+            this.run = function() {
+                setInterval(function() {
+                    let pos = Math.floor(Math.random() * this.colors.length);
+                    this.elem.style.backgroundColor = this.colors[pos];
+                }.bind(this),1000) 
+            };
+        };
+        let color = new Color(document.querySelector("#app"));
+        color.run();
+    </script>
+</body>
+</html>
