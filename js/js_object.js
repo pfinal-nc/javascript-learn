@@ -137,3 +137,7 @@ function upload(params) {
     console.log(params);
 }
 upload({size:999});
+
+// 对象转换
+// 对象直接参与计算时候, 系统会根据计算的场景在 string/number/default 间转换
+// 如果声明需要字符串类型,调用顺序为 toString > valueOf
