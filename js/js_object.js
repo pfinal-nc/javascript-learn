@@ -1,8 +1,8 @@
 let user = {
     name: 'pfinal',
     grade: [
-        {lesson:'js', score: 100},
-        {lesson:'css', score: 90}
+        { lesson: 'js', score: 100 },
+        { lesson: 'css', score: 90 }
     ],
     average() {
         const total = this.grade.reduce((t, a) => t + a.score, 0);
@@ -24,11 +24,11 @@ console.log(user.average())
 let name = "pfinal";
 let obj = {
     name,
-    get: function() {
+    get: function () {
         return this.name
     }
 }
-console.log(obj.get()); 
+console.log(obj.get());
 
 let pf = {};
 let pfinalclub = new Object();
@@ -53,7 +53,7 @@ const pf1 = {
     name: 'pfinal',
 }
 pf1.age = 18;
-pf1.show = function() {
+pf1.show = function () {
     return `${this.name}已经${this.age}岁嘞`
 };
 console.log(pf1.show());
@@ -65,18 +65,18 @@ let lisi = {
     name: '李四',
     age: 20,
     grade: {
-        math:99,
+        math: 99,
         english: 100
     },
     // 平均成绩
-    avgGrade: function() {
+    avgGrade: function () {
         let total = 0;
         for (let key in this.grade) {
             total += this.grade[key];
         }
         return total / this.propertyCount("grade");
     },
-    propertyCount: function(property) {
+    propertyCount: function (property) {
         let count = 0;
         for (let key in this[property]) {
             count++;
@@ -89,14 +89,14 @@ console.log(lisi.avgGrade());
 // 引用特性
 // 对象和函数,数组一样是引用类型, 即复制只会复制引用地址.
 
-let pf2 = {name:"pfinal"};
+let pf2 = { name: "pfinal" };
 let cms = pf2;
 cms.name = "pfinalcms";
 console.log(pf2.name);
 
 // 对象作为函数参数使用时也不会产生完全赋值, 内外共用一个对象
 
-let pf3 = {name:"pfinal"};
+let pf3 = { name: "pfinal" };
 function pfinal(pf3) {
     pf3.name = "pfinalcms";
 }
@@ -111,7 +111,7 @@ console.log(pf3.name);
 
 let xj = {
     name: 'xj',
-    show: function() {
+    show: function () {
         return xj.name;
     }
 };
@@ -122,22 +122,116 @@ let xj = {
 // 展开语法
 // 使用 ... 可以展示对象的结构, 
 
-let pfa = {name:"pfinal南丞",web:"friday-go.icu"};
-let info = {...pfa,age:18};
+let pfa = { name: "pfinal南丞", web: "friday-go.icu" };
+let info = { ...pfa, age: 18 };
 console.log(info);
 
 // 下面是函数参数合并的示例
 
 function upload(params) {
     let config = {
-        type:"*.jpeg,*.png",
-        size:1000
+        type: "*.jpeg,*.png",
+        size: 1000
     };
-    params = {...config,...params};
+    params = { ...config, ...params };
     console.log(params);
 }
-upload({size:999});
+upload({ size: 999 });
 
 // 对象转换
 // 对象直接参与计算时候, 系统会根据计算的场景在 string/number/default 间转换
 // 如果声明需要字符串类型,调用顺序为 toString > valueOf
+// 如果常见需要数值类型, 调用顺序为 valueOf > toString
+
+let pfinal1 = new Number(1);
+console.log(pfinal1 + 1);
+console.log(1 + pfinal1);
+
+// 默认值
+
+function createElement(options) {
+    let { width = 200, height = 100 } = options;
+    console.log(width, height);
+}
+
+createElement({
+    width: 300,
+    height: 200
+})
+
+// 对象结构传参
+
+function user2(name, { sex, age } = {}) {
+    console.log(name, sex, age);
+}
+
+user2('pfinal', { sex: 'girl', age: 18 })
+
+
+// 属性管理
+// 可以为对象添加属性 
+
+let objp = {name: 'pfinal'}
+objp.site = 'friday-go.icu';
+console.log(objp);
+
+// 删除属性
+
+delete objp.site;
+console.log(objp)
+
+// 检测属性
+
+console.log('site' in objp)
+console.log(objp.hasOwnProperty('site'))
+
+// 获取对象所有的属性
+
+let pfc = {name: 'pfinal', age: 18}
+const names = Object.getOwnPropertyNames(pfc);
+const keys = Object.keys(pfc);
+console.log(names)
+console.log(keys)
+
+//计算属性 对象属性可以通过表达式计算定义, 动态设置属性或者执行属性方法时很好用
+let id = 0;
+
+const person = {
+    [`id-${id++}`]: 'pfinal',
+    [`id-${id++}`]: 'xj',
+    [`id-${id++}`]: 'xj1'
+};
+
+console.log(person)
+
+// 使用计算属性为文章定义健明
+const lessons = [
+    {
+      title: "媒体查询响应式布局",
+      category: "css"
+    },
+    {
+      title: "FLEX 弹性盒模型",
+      category: "css"
+    },
+    {
+      title: "MYSQL多表查询随意操作",
+      category: "mysql"
+    }
+  ];
+
+  let lessonObj = lessons.reduce((obj,cur,index)=>{
+    obj[`${cur.category}-${index}`] = cur;
+    return obj
+  },{});
+  console.log(lessonObj);
+
+  
+//   let ul = document.createElement('ul');
+
+//   for (const val of lessonObj) {
+//     let li = document.createElement('li');
+//     li.innerHTML = `课程:${val.name}, 分类:${val.category}`;
+//     ul.appendChild(li);
+//   }
+//   console.log(ul);
