@@ -113,3 +113,24 @@ let pf1 = new User3('pfinal');
 console.log(pf1.name);
 pf1.name = 'pfinalclub';
 console.log(pf1.name);
+
+
+// 使用 Symbol 定义私有访问属性, 即在外部通过查看对象结构无法获取的属性
+
+const protecteds = Symbol();
+
+class Common {
+    constructor() {
+        this[protecteds] = {}
+        this[protecteds].host = 'https://friday-go.icu';
+    }
+    set host(url) {
+        if (!/^https?:/i.test(url)) {
+            throw new Error("非常网址");
+          }
+          this[protecteds].host = url;  
+    }
+    get host() {
+        return this[protecteds].host;
+    }
+}
