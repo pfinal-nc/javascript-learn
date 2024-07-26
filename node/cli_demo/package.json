@@ -1,0 +1,9 @@
+{
+  "name": "cli_demo",
+  "version": "1.0.0",
+  "main": "main.js",
+  "bin": "cli.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
