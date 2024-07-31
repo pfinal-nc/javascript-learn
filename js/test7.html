@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>pfinalclub</h1>
+    <p>https://friady-go.icu</p>
+    <span>PFinal南丞</span>
+<script>
+function element(tag) {
+  const html = document.body.innerHTML;
+  let reg = new RegExp("<(" + tag + ")>.+</\\1>", "g");
+  return html.match(reg);
+}
+console.table(element("p"));
+</script>
+</body>
+</html>

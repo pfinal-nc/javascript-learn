@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 正则断言匹配 -->
+ <main>PFinalClub不断分享视频教程,学习PFinal教程提升编程能力。</main>
+ <script>
+ const main = document.querySelector("main");
+ const reg = /PFinal(?=教程)/gi;
+ main.innerHTML = main.innerHTML.replace(reg,v=>`<a href="https://friday-go.icu">${v}</a>`)
+ </script>
+</body>
+</html>
