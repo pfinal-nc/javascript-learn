@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>a</div>
-        <div>c</div>
-        <div>d</div>
-    </div>
-</body>
+<div id="app">{{ message }}
+
+	<view>
+		<view v-for="(item, index) in inputs" :key="index">
+			<input 
+				:ref="'input' + index" 
+				type="text" 
+				:value="item.value" 
+				:focus="item.focus" 
+				placeholder="Enter text" 
+				@input="updateValue(index, $event)" />
+			<button @click="dataExamine(index)">扫码</button>
+		</view>
+	</view>
+
+</div>
+
 <script>
-    let divs = document.querySelector('#app div');
-    [...divs].map(function(div){
-        console.log(div.innerText);
-        div.innerText = 'hello world';
-    })
-    divs.map((item)=>{
-        console.log(item.innerText);
-        item.innerText = 'hello world';
-    })
+  const { createApp } = Vue
+  
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!',
+        inputs: [
+					{ id: 'input1', value: '' },
+					{ id: 'input2', value: '' },
+					{ id: 'input3', value: '' }
+				]
+      }
+    },
+    methods: {
+            updateValue(index, event) {
+				this.inputs[index].value = event.target.value;
+			},
+			dataExamine(index) {
+				this.inputs.forEach((input, idx) => {
+					this.$set(this.inputs, idx, { ...input, focus: false });
+				});
+				this.$nextTick(() => {
+					this.$set(this.inputs, index, { ...this.inputs[index], focus: true });
+				});
+			}
+		}
+  }).mount('#app')
 </script>
+</body>
 </html>
