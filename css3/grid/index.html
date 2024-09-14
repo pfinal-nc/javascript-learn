@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid 布局</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <style>
+      div {
+        /* display: grid; */
+        display: inline-grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 200px 200px 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    最外层的div 元素就是容器, 内层的三个 div 元素是项目 
+    1. 容器里面的水平区域称为 行 垂直区域为 列 
+    -->
+    <div>
+      <div class="bg-blue-500"><p>1</p></div>
+      <div><p>2</p></div>
+      <div><p>3</p></div>
+      <div><p>4</p></div>
+    </div>
+  </body>
+</html>

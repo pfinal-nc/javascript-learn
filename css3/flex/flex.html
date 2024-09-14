@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: --webkit-flex;
+            display: flex;
+            width: 100vmax;
+            height: 200vh;
+            background-color: aqua;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            flex-direction: column;
+            /* flex-wrap: nowrap; */
+            /* flex-wrap: wrap; */
+            flex-wrap: wrap-reverse;
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            justify-content: space-around;
+            /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); */
+            /* background-image: radial-gradient(red, orange, yellow, green, blue, indigo, violet); */
+        }
+        .box .flex_item {
+            width: 20dvb;
+            height: 20vh;
+            background-color: red;
+            margin-left: 1dvb;
+        }
+        /**
+        css 中 px、em、rem、vh、vw、%的区别
+        1. px： 相对长度单位。px就是pixel的缩写，意为像素。px就是一张图片最小的一个点，一张位图就是千千万万的这样的点构成的，比如常常听到的电脑像素是1024x768的，表示的是水平方向是1024个像素点，垂直方向是768个像素点。
+        2. em：相对长度单位，这个单位表示元素的font-size的计算值。如果用在font-size 属性本身，它会继承父元素的font-size。如果自身定义了font-size按自身来计算（浏览器默认字体是16px），整个页面内1em不是一个固定的值。
+        3. rem：相对长度单位。相对于根元素html（网页）的font-size，不会像em那样，依赖于父元素的字体大小，而造成混乱。
+        4. %： 相对长度单位。一般宽泛的讲是相对于父元素，但是并不是十分准确。百分比是针对与该元素的包含块来计算的。
+            对于普通定位元素就是我们理解的父元素
+            对于position: absolute;的元素是相对于已定位的父元素
+            对于position: fixed;的元素是相对于 ViewPort（可视窗口）
+        5. vw： 相对长度单位。viewport width的缩写，视窗宽度，1vw等于视窗宽度的1%。
+        6. vh： 相对长度单位。viewport height的缩写，视窗高度，1vh等于视窗高度的1%。
+        7. vmin：相对长度单位。取vw和vh中较小的一个值。
+        8. vmax：相对长度单位。取vw和vh中较大的一个值。
+            浏览器视口高度900px，宽度1200px，那么：
+            1 vh = 900px/100 = 9 px。
+            1 vw = 1200px/100 = 12 px。
+            1 vmin = 900px/100 = 9 px。
+            1 vmax = 1200px/100 = 12 px。
+        9. ex: 这个单位表示元素font的 x-height 。在含有“x”字母的字体中，它是该字体的小写字母的高度；对于很多字体， 1ex ≈ 0.5em。
+        10. ch: 这个单位表示元素font的“0”字形的宽度。
+        11. cm: 这个单位表示1厘米。
+        12. mm: 这个单位表示1毫米。
+        13. in: 这个单位表示1英寸。
+        14. pt: 这个单位表示1点。在CSS中，1pt = 1/72in。
+        15. pc: 这个单位表示1派卡。在CSS中，1pc = 12pt。
+        16. q: 这个单位表示1/4毫米。
+        17. lh:等于元素行高line-height的计算值。
+        18. rlh:等于元素行高line-height的算值，但允许负值。
+        19. fr: 这个单位表示剩余空间的一个比例。
+        20. vi: 等于初始包含块的大小的1%，在根元素的内联轴的方向上。
+        21. vb: 等于初始包含块的大小的1%，在根元素的块轴的方向上。
+        22. vc: 这个单位表示视窗的尺寸，即同时等于视窗的宽度和高度中的较小值。
+
+        */
+        
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="flex_item">1</div>
+        <div class="flex_item">2</div>
+        <div class="flex_item">3</div>
+    </div>
+</body>
+</html>
