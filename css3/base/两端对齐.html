@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            /* white-space: pre; */
+            /* 文字两边对其 只是“近似”的 */
+            /* width: 1em; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="demo">
+        <li>技 术 部</li>
+        <li>体验设计部</li>
+        <li>行 政 部</li>
+    </ul>
+    <ul>
+        <li>技<span></span>术<span></span>部</li>
+        <li>体验设计部</li>
+        <li>行<span></span>政<span></span>部</li>
+    </ul>
+    <ul>
+        <li><span>技</span><span>术</span><span>部</span></li>
+        <li><span>体</span><span>验</span><span>设</span><span>计</span><span>部</span></li>
+        <li><span>行</span><span>政</span><span>部</span></li>
+    </ul>
+</body>
+
+</html>
