@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
+        .item{
             width: 200px;
             height: 200px;
+            border-radius: 25px;
+        }
+        .item1 {
             background-color: brown;
             background-size: 80px 60px;
-            border-radius: 25px;
             box-shadow: 10px 10px 5px #888888;
+            background: linear-gradient(to left,red,blue);
+        }
+        .item2 {
+            
+            /* background: linear-gradient(to bottom left,red,blue); */
+            background: linear-gradient(180deg, red, blue);
+        }
+        .item3 {
+            background: linear-gradient(to top right,red,orange,yellow,blue,indigo,violet);
         }
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="item item1"></div>
     <br>
-    <div></div>
+    <div class="item item2"></div>
+    <br>
+    <div class="item item3"></div>
 </body>
 </html>
