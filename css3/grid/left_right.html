@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 50px auto;
+            height: 200px;
+            display: grid;
+            grid-template-columns: 10vw auto 20vw;
+            border: 5px solid #3333;
+            column-gap: 10px;
+        }
+        .box div {
+            padding: 20px;
+            background-clip: content-box;
+            background-color: blueviolet;
+            color: #fff;
+            border: 1px solid #d2d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>auto</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
