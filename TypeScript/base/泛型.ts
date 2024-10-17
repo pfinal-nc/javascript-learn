@@ -65,12 +65,18 @@ let myTest: FN = test;
 console.log(myTest(()=>{return 123})())
 
 
-// 类的泛型写法
-class GenericNumber<T> {
-  zeroValue: T
-  add: (x: T, y: T) => T
-}
+// // 类的泛型写法
+// class GenericNumber<T> {
+//   zeroValue: T
+//   add: (x: T, y: T) => T
+// }
 
 // 类型别名的泛型写法
 
 type Nullable<T> = T | null|undefined;
+type Container<T> = { value: T };
+
+const a: Nullable<number> = null;
+const b: Container<number> = { value: 1 };
+
+console.log(a,b)
