@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="s1">ID选择器</div>
+    <div class="s2">类选择其</div>
+    <div id="s4">相邻选择器</div>
+    <div>相邻选择器</div>
+    <div id="s5">相邻选择器 ~</div>
+    <div class="s6">相邻选择器</div>
+    <div class="s6">相邻选择器</div>
+    <div class="s6">相邻选择器</div>
+    <div class="s9">
+        <div>通配符选择器</div>
+        <em>通配符选择器</em>
+    </div>
+    <style>
+        #s1{
+            color: red;
+        }
+       .s2{
+            color: blue;
+        }
+
+        #s4 + div{
+            color: #0033ff;
+        }
+        #s5 ~.s6{
+            color: #00ff08;
+        }
+
+        .s9 * {
+            color: #ffb700;
+        }
+
+    </style>
+</body>
+</html>

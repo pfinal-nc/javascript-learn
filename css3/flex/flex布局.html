@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLEX布局</title>
+</head>
+<body>
+    <div id="t1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <!-- 
+        3
+        2
+        2
+     -->
+
+    <div id="t2" style="width: 20px;">
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <!-- 
+        45
+        6
+     -->
+
+    <div id="t3" style="width: 20px;">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <!-- 
+        87
+         9
+     -->
+
+     <div id="t4">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+    </div>
+    <!-- abc[水平居中] -->
+
+    <div id="t5" style="height: 50px;">
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+    </div>
+    <!-- def[垂直居中] -->
+
+    <div id="t6" style="height: 50px;width: 20px;">
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+    <!-- 
+        g
+        hi
+        [交叉轴space-between] 
+    -->
+
+    <div class="flexBox">
+        <div style="order: 3;">j</div>
+        <div style="order: 1;">k</div>
+        <div style="order: 2;">l</div>
+    </div>
+    <!-- klj -->
+
+    <div class="flexBox">
+        <div style="flex-grow: 1;">m</div>
+        <div style="flex-grow: 2;">n</div>
+        <div style="flex-grow: 3;">o</div>
+    </div>
+    <!-- m n o -->
+
+    <div class="flexBox" style="width: 100px;">
+        <div style="flex-shrink: 1;width: 100px;">p</div>
+        <div style="flex-shrink: 2;width: 100px;">q</div>
+        <div style="flex-shrink: 3;width: 100px;">r</div>
+    </div>
+    <!-- p q r -->
+
+    <div class="flexBox">
+        <div>s</div>
+        <div style="flex-basis: 40px;">t</div>
+        <div>u</div>
+    </div>
+    <!-- s t u -->
+
+    <div class="flexBox" style="height: 50px;">
+        <div>y</div>
+        <div style="align-self: center;">z</div>
+        <div>0</div>
+    </div>
+    <!-- y z 0 -->
+
+</body>
+<style type="text/css">
+    #t1{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #t2{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #t3{
+        display: flex;
+        flex-flow: row-reverse wrap;
+    }
+    #t4{
+        display: flex;
+        justify-content: center;
+    }
+    #t5{
+        display: flex;
+        align-items: center;
+    }
+
+    #t6{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .flexBox{
+        display: flex;
+    }
+</style>
+</html>
