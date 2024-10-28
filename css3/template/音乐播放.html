@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen bg-purple-100">
+        <!-- Main Player Container -->
+        <div class="flex w-[800px] h-[350px] bg-white rounded-3xl shadow-lg overflow-hidden">
+          
+          <!-- Sidebar -->
+          <div class="w-20 bg-black text-white flex flex-col items-center py-4 space-y-6">
+            <span class="text-xs font-bold">09:35</span>
+            <button class="text-gray-400 hover:text-white">▲</button>
+            <button class="text-gray-400 hover:text-white">🎵</button>
+            <button class="text-gray-400 hover:text-white">🎹</button>
+            <button class="text-gray-400 hover:text-white">◻️</button>
+          </div>
+          
+          <!-- Player Section -->
+          <div class="flex-1 p-8 flex items-center space-x-8">
+            <!-- Album Info and Controls -->
+            <div class="flex-1">
+              <div class="mb-4">
+                <h2 class="text-2xl font-semibold">House of Cards</h2>
+                <p class="text-sm text-gray-500">Radiohead</p>
+              </div>
+              <!-- Control Icons -->
+              <div class="flex items-center space-x-4 mb-4 text-gray-600">
+                <button>❤️</button>
+                <button>↔️</button>
+                <button>📄</button>
+                <button>🔊</button>
+              </div>
+              <!-- Progress Bar -->
+              <div class="flex items-center space-x-2 mb-6">
+                <span class="text-xs text-gray-500">02:09</span>
+                <div class="relative flex-1 h-1 bg-gray-300 rounded-full">
+                  <div class="absolute top-0 h-1 w-1/3 bg-purple-500 rounded-full"></div>
+                  <div class="absolute top-0 -mt-2 w-4 h-4 bg-white border border-purple-500 rounded-full cursor-pointer" style="left:33%;"></div>
+                </div>
+                <span class="text-xs text-gray-500">05:46</span>
+              </div>
+              <!-- Playback Controls -->
+              <div class="flex items-center justify-between max-w-xs">
+                <button class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-xl">⏮️</button>
+                <button class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center text-xl">⏯️</button>
+                <button class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-xl">⏭️</button>
+              </div>
+            </div>
+      
+            <!-- Album Cover -->
+            <div class="w-48 h-48 rounded-full bg-black flex items-center justify-center relative">
+              <div class="w-32 h-32 rounded-full bg-purple-500 text-white flex items-center justify-center">
+                <span>"AlbumCover"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+</body>
+</html>
