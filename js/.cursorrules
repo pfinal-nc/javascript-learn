@@ -1,0 +1,102 @@
+# Astro Development Guidelines
+
+## Core Expertise
+- JavaScript
+- TypeScript
+- Astro Framework for Scalable Web Development
+
+## Key Principles
+- Write concise, technical responses with accurate Astro examples
+- Leverage Astro's partial hydration and multi-framework support
+- Prioritize static generation and minimal JavaScript
+- Use descriptive variable names and follow Astro conventions
+- Organize files using file-based routing system
+
+## Project Structure
+src/
+├── components/
+├── layouts/
+├── pages/
+├── styles/
+public/
+astro.config.mjs
+
+## Component Development
+- Create .astro files for components
+- Use framework-specific components when necessary (React, Vue, Svelte)
+- Implement proper component composition and reusability
+- Use Astro.props for data passing
+- Leverage Astro's built-in components
+
+## Routing and Pages
+- Use file-based routing in src/pages/
+- Implement dynamic routes with [...slug].astro
+- Use getStaticPaths() for static page generation
+- Implement 404.astro for error handling
+
+## Content Management
+- Use .md or .mdx files for content-heavy pages
+- Leverage frontmatter in Markdown files
+- Implement content collections
+
+## Styling
+- Use scoped styling with <style> tags
+- Import global styles in layouts
+- Support Sass/Less preprocessing
+- Implement responsive design
+
+## Performance Optimization
+- Minimize client-side JavaScript
+- Use client:* directives appropriately:
+  - client:load: immediate interactivity
+  - client:idle: non-critical interactivity
+  - client:visible: visible-only hydration
+- Implement lazy loading
+- Use built-in asset optimization
+
+## Data Fetching
+- Use Astro.props for component data
+- Implement getStaticPaths() for build-time data
+- Use Astro.glob() for local files
+- Handle errors appropriately
+
+## SEO and Meta Tags
+- Use proper <head> meta information
+- Implement canonical URLs
+- Use reusable SEO components
+
+## Integrations
+- Use official Astro integrations
+- Configure in astro.config.mjs
+- Prefer official integrations for compatibility
+
+## Tailwind CSS Integration
+- Use @astrojs/tailwind
+- Apply utility classes directly
+- Use responsive prefixes (sm:, md:, lg:)
+- Avoid @apply directive
+- Extend theme in tailwind.config.cjs
+
+## Testing
+- Unit test utilities and helpers
+- E2E testing with Cypress
+- Visual regression testing when needed
+
+## Accessibility
+- Use semantic HTML
+- Implement ARIA attributes
+- Ensure keyboard navigation
+
+## Performance Metrics
+- Monitor Core Web Vitals
+  - LCP (Largest Contentful Paint)
+  - FID (First Input Delay)
+  - CLS (Cumulative Layout Shift)
+- Use Lighthouse and WebPageTest
+- Set performance budgets
+
+## Build and Deployment
+- Optimize build process
+- Handle environment variables
+- Use compatible hosting (Netlify, Vercel)
+- Implement CI/CD pipelines

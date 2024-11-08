@@ -1,5 +1,7 @@
-define(function(){
-    function fun1(){
-        alert("require_a");
-    }
-})
+define([], function() {
+    return {
+        fun1: function() {
+            alert("It works!");
+        }
+    };
+});

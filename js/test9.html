@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RequireJS Demo</title>
+    <style>
+        span {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        span:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
     <script src="./require.js"></script>
     <script>
+        // RequireJS 配置
         require.config({
+            baseUrl: './',
             paths: {
-                "jquery": ["http://libs.baidu.com/jquery/2.0.3/jquery"],
-                "require_a": "require_a"
+                'jquery': ['https://cdn.jsdelivr.net/npm/jquery@2.0.3/dist/jquery.min'],
+                'require_a': 'require_a'
             }
         });
-        require(["jquery","require_a"],function($){
-            $("span").click(function(){
-                fun1();
-            })
+
+        // 主要逻辑
+        require(['jquery', 'require_a'], function($, moduleA) {
+            // 确保 DOM 完全加载
+            $(document).ready(function() {
+                // 事件处理
+                $('span').on('click', function() {
+                    moduleA.fun1();
+                });
+            });
         });
     </script>
 </head>
 <body>
     <span>PFinalClub</span>
-    <!-- <script>
-        (function(){
-            function fun1() {
-                alert("it works")
-            }
-            fun1();
-        })()
-    </script> -->
 </body>
 </html>   
