@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minim Shop</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white">
+    <!-- 导航栏 -->
+    <nav class="flex items-center justify-between p-6">
+        <button class="text-2xl">☰</button>
+        <h1 class="text-2xl font-medium">minim</h1>
+        <div class="flex items-center gap-4">
+            <a href="#" class="text-sm">account</a>
+            <a href="#" class="text-xl">🛒</a>
+        </div>
+    </nav>
+
+    <!-- 主要展示区 -->
+    <main class="px-6">
+        <!-- 商店区域 -->
+        <section class="mb-20">
+            <div class="flex gap-8">
+                <div class="w-1/4">
+                    <h2 class="text-3xl font-bold mb-6">Shop</h2>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>Home Furnishings</li>
+                        <li>Accessories</li>
+                        <li>Sports</li>
+                        <li>Clothing Store</li>
+                    </ul>
+                </div>
+                <div class="w-3/4">
+                    <div class="relative">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' fill='%23F3F4F6'%3E%3Crect width='800' height='600'/%3E%3Ctext x='400' y='300' font-family='Arial' font-size='32' fill='%239CA3AF' text-anchor='middle'%3EChair Image%3C/text%3E%3C/svg%3E" 
+                             alt="White Clock" class="w-full h-auto">
+                        <div class="absolute top-4 right-4">
+                            <span class="text-sm">1.6</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <h3 class="text-sm text-gray-500">LIMITED EDITION</h3>
+                            <h2 class="text-2xl font-bold">White Clock</h2>
+                            <button class="mt-4 px-6 py-2 border border-black">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 室内外区域 -->
+        <section class="grid grid-cols-2 gap-6 mb-20">
+            <div class="relative bg-gray-100 p-8">
+                <span class="absolute top-4 left-4">1.1</span>
+                <h3>Outdoors</h3>
+                <p class="text-sm text-gray-500">SHOP</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='%23E5E7EB'%3E%3Ccircle cx='100' cy='100' r='50' fill='%234B5563'/%3E%3C/svg%3E"
+                     alt="Outdoor item" class="w-40 mx-auto my-8">
+                <button class="text-sm underline">Shop Outdoors</button>
+            </div>
+            <div class="relative bg-blue-100 p-8">
+                <span class="absolute top-4 left-4">1.2</span>
+                <h3>Indoors</h3>
+                <p class="text-sm text-gray-500">SHOP</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='%23DBEAFE'%3E%3Ccircle cx='100' cy='100' r='10' fill='%234B5563'/%3E%3Ccircle cx='100' cy='130' r='8' fill='%234B5563'/%3E%3Ccircle cx='100' cy='155' r='6' fill='%234B5563'/%3E%3C/svg%3E"
+                     alt="Indoor item" class="w-40 mx-auto my-8">
+                <button class="text-sm underline">Shop Indoors</button>
+            </div>
+        </section>
+
+        <!-- 流行商品区域 -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Popular</h2>
+                <div class="flex gap-4">
+                    <button class="text-sm text-gray-500">Previous</button>
+                    <button class="text-sm">Next</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-4 gap-6">
+                <!-- 产品卡片 1 -->
+                <div class="space-y-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23F3F4F6'%3E%3Crect width='300' height='300'/%3E%3Cpath d='M150 100 L100 200 L200 200 Z' fill='%239CA3AF'/%3E%3C/svg%3E" 
+                         alt="Product" class="w-full">
+                    <p class="text-sm font-medium">Poltrona</p>
+                    <p class="text-sm text-gray-500">$599.0</p>
+                </div>
+                
+                <!-- 产品卡片 2 -->
+                <div class="space-y-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23F3F4F6'%3E%3Crect width='300' height='300'/%3E%3Crect x='100' y='100' width='100' height='100' fill='%239CA3AF'/%3E%3C/svg%3E" 
+                         alt="Product" class="w-full">
+                    <p class="text-sm font-medium">Coffee Mug</p>
+                    <p class="text-sm text-gray-500">$29.0</p>
+                </div>
+                
+                <!-- 产品卡片 3 -->
+                <div class="space-y-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23F3F4F6'%3E%3Crect width='300' height='300'/%3E%3Ccircle cx='150' cy='150' r='50' fill='%239CA3AF'/%3E%3C/svg%3E" 
+                         alt="Product" class="w-full">
+                    <p class="text-sm font-medium">Pendant Light</p>
+                    <p class="text-sm text-gray-500">$199.0</p>
+                </div>
+                
+                <!-- 产品卡片 4 -->
+                <div class="space-y-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23F3F4F6'%3E%3Crect width='300' height='300'/%3E%3Cpath d='M100 100 L200 100 L150 200 Z' fill='%239CA3AF'/%3E%3C/svg%3E" 
+                         alt="Product" class="w-full">
+                    <p class="text-sm font-medium">Tea Pot</p>
+                    <p class="text-sm text-gray-500">$89.0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
