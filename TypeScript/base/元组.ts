@@ -18,3 +18,14 @@ let value1: LabelKeyPick = 'b';
 
 console.log(value1);
 
+let xx: [number, number] = [1, 2];
+console.log(xx[0]);
+
+type NamedNums = [
+    string,
+    ...number[]
+]
+
+let nums: NamedNums = ['pfinal', 1, 2, 3];
+
+console.log(nums);
