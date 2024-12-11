@@ -25,3 +25,28 @@ console.log(f)
 
 
 
+// 参数默认值
+function createPoint(x =0, y=0) {
+    return [x,y]
+}
+
+// never 类型表示肯定不会出现的值, 它用在函数的返回值, 就表示某个函数肯定不会返回值 即函数不会正常执行结束
+// 它主要有以下两种情况
+// 抛出错误的函数
+// function fail(msg:string) {
+//     throw new Error(msg)
+// }
+
+// 只要抛出错误,才是 never 类型 如果显式用return语句返回一个 Error 对象，返回值就不是 never 类型。
+
+function fail():Error {
+    return new Error("Something failed")
+}
+
+// 无线执行的含税
+const sing = function():never {
+    while(true) {
+        console.log('PFinalClub')
+    }
+}
+// 函数 sing 会永远执行,不会返回 所有返回值类型是 never,never 
