@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: 100%;
+            padding: 60px 0;
+        }
+        .bevel-corners{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .bevel-corners > div{
+            width: 249px;
+            color: #FFF;
+            padding: 1.2em 1.8em;
+            hyphens: auto;
+            text-align: justify;
+            background: linear-gradient(45deg, transparent 12px, #b4a078 13px) bottom left, 
+                linear-gradient(135deg, transparent 12px, #b4a078 13px) top left, 
+                linear-gradient(-135deg, transparent 12px, #b4a078 13px) top right, 
+                linear-gradient(-45deg, transparent 12px, #b4a078 13px) bottom right;
+            background-size: 51% 51%;
+            background-repeat: no-repeat;
+        }
+        .bevel-corners > p{
+            width: 116px;;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="bevel-corners">
+            <p>① linear-gradient</p>
+            <div>A paragraph of filler text.La la la de dah de dah de dah de la.La la la de dah de dah de dah de la.La la la de dah de dah de dah de la.</div>
+          </div>
+    </main>
+</body>
+</html>

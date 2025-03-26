@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于 flexbox 的居中布局</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            min-height: 100%;
+            margin: 0;
+        }
+        html {
+            height: 100%;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 18em;
+            height: 10em;
+            padding: 1em 1.5em;
+            margin: 0 auto;
+            box-sizing: border-box;
+            background: #655;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head> 
+<body>
+    <main>
+        Center me
+    </main>
+</body>
+</html>
