@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的订单 - ProxyHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen text-gray-300">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-10 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-500 neon-text">ProxyHub</a>
+            <div class="flex space-x-6">
+                <a href="index.html" class="text-gray-300 hover:text-blue-400">首页</a>
+                <a href="dashboard.html" class="text-gray-300 hover:text-blue-400">控制台</a>
+                <a href="api.html" class="text-gray-300 hover:text-blue-400">API文档</a>
+                <a href="user_orders.html" class="text-blue-400">我的订单</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <div class="container mx-auto pt-24 px-6 pb-12">
+        <!-- 订单管理标题 -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">我的订单</h1>
+            <p class="text-gray-400">管理您的订单、支付和发票</p>
+        </div>
+
+        <!-- 订单统计卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="glass-effect p-6 rounded-xl">
+                <h3 class="text-lg font-semibold mb-2">待支付订单</h3>
+                <div class="text-3xl font-bold text-yellow-400">2</div>
+            </div>
+            <div class="glass-effect p-6 rounded-xl">
+                <h3 class="text-lg font-semibold mb-2">已完成订单</h3>
+                <div class="text-3xl font-bold text-green-400">15</div>
+            </div>
+            <div class="glass-effect p-6 rounded-xl">
+                <h3 class="text-lg font-semibold mb-2">本月消费</h3>
+                <div class="text-3xl font-bold text-blue-400">¥1,299</div>
+            </div>
+        </div>
+
+        <!-- 订单列表 -->
+        <div class="glass-effect p-6 rounded-xl mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold">订单历史</h2>
+                <div class="flex space-x-4">
+                    <select class="bg-gray-800 px-4 py-2 rounded border border-gray-700">
+                        <option>全部状态</option>
+                        <option>待支付</option>
+                        <option>已完成</option>
+                        <option>已取消</option>
+                    </select>
+                    <input type="text" placeholder="搜索订单号" class="bg-gray-800 px-4 py-2 rounded border border-gray-700">
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 text-left">订单号</th>
+                            <th class="py-3 text-left">产品</th>
+                            <th class="py-3 text-left">金额</th>
+                            <th class="py-3 text-left">状态</th>
+                            <th class="py-3 text-left">创建时间</th>
+                            <th class="py-3 text-left">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4">ORD20240101001</td>
+                            <td>专业版套餐</td>
+                            <td>¥299</td>
+                            <td><span class="text-yellow-400">待支付</span></td>
+                            <td>2024-01-01 10:00</td>
+                            <td>
+                                <button class="text-blue-400 hover:text-blue-500">支付</button>
+                                <button class="text-red-400 hover:text-red-500 ml-4">取消</button>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-4">ORD20231225001</td>
+                            <td>企业版套餐</td>
+                            <td>¥999</td>
+                            <td><span class="text-green-400">已完成</span></td>
+                            <td>2023-12-25 15:30</td>
+                            <td>
+                                <button class="text-blue-400 hover:text-blue-500">查看</button>
+                                <button class="text-gray-400 hover:text-gray-500 ml-4">开票</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+                <div>显示 1-2 共 2 条</div>
+                <div class="flex space-x-2">
+                    <button class="px-4 py-2 bg-gray-800 rounded disabled:opacity-50">上一页</button>
+                    <button class="px-4 py-2 bg-blue-600 rounded">1</button>
+                    <button class="px-4 py-2 bg-gray-800 rounded disabled:opacity-50">下一页</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 支付方式管理 -->
+        <div class="glass-effect p-6 rounded-xl mb-8">
+            <h2 class="text-2xl font-semibold mb-6">支付方式</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border border-gray-700 rounded-lg p-4 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold">信用卡</div>
+                            <div class="text-sm text-gray-400">**** **** **** 1234</div>
+                        </div>
+                    </div>
+                    <button class="text-red-400 hover:text-red-500">删除</button>
+                </div>
+                <div class="border border-gray-700 rounded-lg p-4 flex items-center justify-center cursor-pointer hover:border-blue-500">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    添加支付方式
+                </div>
+            </div>
+        </div>
+
+        <!-- 发票管理 -->
+        <div class="glass-effect p-6 rounded-xl">
+            <h2 class="text-2xl font-semibold mb-6">发票管理</h2>
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold mb-4">发票信息</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="公司名称" class="bg-gray-800 px-4 py-2 rounded border border-gray-700">
+                    <input type="text" placeholder="税号" class="bg-gray-800 px-4 py-2 rounded border border-gray-700">
+                </div>
+                <button class="px-6 py-2 bg-blue-600 rounded hover:bg-blue-700 transition">保存发票信息</button>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">开票记录</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-gray-700">
+                                <th class="py-3 text-left">发票号</th>
+                                <th class="py-3 text-left">金额</th>
+                                <th class="py-3 text-left">状态</th>
+                                <th class="py-3 text-left">申请时间</th>
+                                <th class="py-3 text-left">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-4">INV20231225001</td>
+                                <td>¥999</td>
+                                <td><span class="text-green-400">已开具</span></td>
+                                <td>2023-12-25 16:00</td>
+                                <td>
+                                    <button class="text-blue-400 hover:text-blue-500">下载</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

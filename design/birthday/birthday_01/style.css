@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe6fa 0%, #b2f0fb 100%);
+  min-height: 100vh;
+}
+.container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.12);
+  padding: 36px 28px 32px 28px;
+  text-align: center;
+}
+.birthday-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 18px auto;
+  background: url('data:image/svg+xml;utf8,<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="55" fill="%23ffe066" stroke="%23ffb347" stroke-width="6"/><ellipse cx="60" cy="80" rx="38" ry="22" fill="%23fff"/><rect x="40" y="40" width="40" height="40" rx="12" fill="%23ffb347"/><rect x="52" y="28" width="16" height="18" rx="8" fill="%23ff6384"/><rect x="58" y="18" width="4" height="12" rx="2" fill="%23fff"/></svg>') no-repeat center/cover;
+  animation: bounce 1.5s infinite alternate;
+}
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+h1 {
+  color: #ff6384;
+  margin-bottom: 10px;
+  font-size: 2.2em;
+  letter-spacing: 2px;
+}
+.desc {
+  color: #666;
+  margin-bottom: 16px;
+}
+input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 70%;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border 0.2s;
+}
+input[type="text"]:focus {
+  border: 1.5px solid #ffb347;
+}
+button {
+  padding: 8px 24px;
+  background: linear-gradient(90deg, #ffb347 0%, #ff6384 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: linear-gradient(90deg, #ff6384 0%, #ffb347 100%);
+}
+.wish-msg {
+  margin-top: 22px;
+  font-size: 1.15em;
+  color: #ff6384;
+  min-height: 32px;
+  font-weight: bold;
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

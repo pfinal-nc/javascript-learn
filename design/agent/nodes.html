@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点列表 - 代理IP管理系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen text-gray-300">
+    <div class="min-h-screen">
+        <!-- 顶部导航栏 -->
+        <nav class="glass-effect fixed w-full z-10 px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-blue-500 neon-text">ProxyHub</h1>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-blue-400">首页</a>
+                    <a href="admin.html" class="text-gray-300 hover:text-blue-400">管理面板</a>
+                    <a href="orders.html" class="text-gray-300 hover:text-blue-400">订单管理</a>
+                    <a href="api.html" class="text-gray-300 hover:text-blue-400">API文档</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <div class="container mx-auto pt-24 px-6 pb-12">
+            <!-- IP统计卡片 -->
+            <div class="glass-effect rounded-xl p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">总IP数</span>
+                            <span class="text-3xl font-bold text-blue-400">25</span>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">在线IP</span>
+                            <span class="text-3xl font-bold text-green-400">18</span>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">离线IP</span>
+                            <span class="text-3xl font-bold text-red-400">7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IP列表 -->
+            <div class="glass-effect rounded-xl p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-blue-400">IP节点列表</h2>
+                    <div class="flex space-x-4">
+                        <input type="text" placeholder="搜索IP地址..." class="bg-gray-800 bg-opacity-50 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">搜索</button>
+                    </div>
+                </div>
+
+                <!-- 表格 -->
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="text-left border-b border-gray-700">
+                                <th class="py-3 px-4">IP地址</th>
+                                <th class="py-3 px-4">地区</th>
+                                <th class="py-3 px-4">状态</th>
+                                <th class="py-3 px-4">延迟</th>
+                                <th class="py-3 px-4">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700 hover:bg-gray-800 hover:bg-opacity-50">
+                                <td class="py-3 px-4">192.168.1.1</td>
+                                <td class="py-3 px-4">中国上海</td>
+                                <td class="py-3 px-4"><span class="text-green-400">在线</span></td>
+                                <td class="py-3 px-4">50ms</td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-400 hover:text-blue-300 mr-3">编辑</button>
+                                    <button class="text-red-400 hover:text-red-300">删除</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-700 hover:bg-gray-800 hover:bg-opacity-50">
+                                <td class="py-3 px-4">192.168.1.2</td>
+                                <td class="py-3 px-4">美国纽约</td>
+                                <td class="py-3 px-4"><span class="text-red-400">离线</span></td>
+                                <td class="py-3 px-4">-</td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-400 hover:text-blue-300 mr-3">编辑</button>
+                                    <button class="text-red-400 hover:text-red-300">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="flex justify-between items-center mt-6">
+                    <div class="text-gray-400">显示 1-10 共 25 条</div>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 rounded-lg bg-gray-800 bg-opacity-50 text-gray-400 hover:bg-opacity-70">上一页</button>
+                        <button class="px-4 py-2 rounded-lg bg-blue-600 text-white">1</button>
+                        <button class="px-4 py-2 rounded-lg bg-gray-800 bg-opacity-50 text-gray-400 hover:bg-opacity-70">2</button>
+                        <button class="px-4 py-2 rounded-lg bg-gray-800 bg-opacity-50 text-gray-400 hover:bg-opacity-70">3</button>
+                        <button class="px-4 py-2 rounded-lg bg-gray-800 bg-opacity-50 text-gray-400 hover:bg-opacity-70">下一页</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

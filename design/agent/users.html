@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .neon-text {
+            text-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
+        }
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-bold text-white neon-text">管理系统</h1>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="admin.html" class="text-gray-300 hover:text-white transition-colors">仪表盘</a>
+                        <a href="users.html" class="text-white font-medium">用户管理</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3 bg-blue-900 bg-opacity-50 rounded-full px-4 py-2">
+                    <span class="text-gray-300">管理员</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="管理员头像" class="w-8 h-8 rounded-full border-2 border-blue-400">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="container mx-auto pt-24 px-6 pb-12">
+        <!-- 用户统计卡片 -->
+        <div class="glass-effect rounded-xl p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300 text-lg">总用户数</span>
+                        <span class="text-3xl font-bold text-blue-400">1,234</span>
+                    </div>
+                </div>
+                <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300 text-lg">活跃用户</span>
+                        <span class="text-3xl font-bold text-green-400">856</span>
+                    </div>
+                </div>
+                <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300 text-lg">今日注册</span>
+                        <span class="text-3xl font-bold text-yellow-400">24</span>
+                    </div>
+                </div>
+                <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300 text-lg">禁用用户</span>
+                        <span class="text-3xl font-bold text-red-400">12</span>
+                    </div>
+                </div>
+                <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-300 text-lg">已购买用户</span>
+                        <span class="text-3xl font-bold text-purple-400">458</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 用户列表 -->
+        <div class="glass-effect rounded-xl p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-blue-400">用户列表</h2>
+                <div class="flex space-x-4">
+                    <input type="text" placeholder="搜索用户..." class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white font-medium">搜索</button>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-gray-300 text-left">
+                            <th class="p-4">用户ID</th>
+                            <th class="p-4">用户名</th>
+                            <th class="p-4">注册时间</th>
+                            <th class="p-4">使用流量</th>
+                            <th class="p-4">状态</th>
+                            <th class="p-4">购买状态</th>
+                            <th class="p-4">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4">#001</td>
+                            <td class="p-4">张三</td>
+                            <td class="p-4">2024-01-15</td>
+                            <td class="p-4">1.2GB</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-green-500 bg-opacity-20 text-green-400 rounded-full">活跃</span></td>
+                            <td class="p-4"><span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full">已购买</span></td>
+                            <td class="p-4">
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white">编辑</button>
+                                    <button class="px-3 py-1 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-white">禁用</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4">#002</td>
+                            <td class="p-4">李四</td>
+                            <td class="p-4">2024-01-14</td>
+                            <td class="p-4">2.5GB</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-yellow-500 bg-opacity-20 text-yellow-400 rounded-full">闲置</span></td>
+                            <td class="p-4"><span class="px-2 py-1 bg-gray-500 bg-opacity-20 text-gray-400 rounded-full">未购买</span></td>
+                            <td class="p-4">
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white">编辑</button>
+                                    <button class="px-3 py-1 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-white">禁用</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4">#003</td>
+                            <td class="p-4">王五</td>
+                            <td class="p-4">2024-01-13</td>
+                            <td class="p-4">0.8GB</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-red-500 bg-opacity-20 text-red-400 rounded-full">禁用</span></td>
+                            <td class="p-4"><span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full">已购买</span></td>
+                            <td class="p-4">
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white">编辑</button>
+                                    <button class="px-3 py-1 bg-green-600 hover:bg-green-700 rounded-lg transition-colors text-white">启用</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 分页 -->
+            <div class="flex justify-between items-center mt-6">
+                <div class="text-gray-300">
+                    显示 1 到 3 条记录，共 1,234 条
+                </div>
+                <div class="flex space-x-2">
+                    <button class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white">上一页</button>
+                    <button class="px-4 py-2 bg-blue-600 rounded-lg text-white">1</button>
+                    <button class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white">2</button>
+                    <button class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white">3</button>
+                    <button class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white">下一页</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

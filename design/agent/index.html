@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理IP购买平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glass-effect fixed w-full z-10 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-500 neon-text">ProxyHub</a>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-300 hover:text-blue-400">首页</a>
+                <a href="#" class="text-gray-300 hover:text-blue-400">产品</a>
+                <a href="#" class="text-gray-300 hover:text-blue-400">API文档</a>
+                <a href="login.html" class="text-gray-300 hover:text-blue-400">登录</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold text-white mb-6 neon-text">高质量代理IP解决方案</h1>
+            <p class="text-xl text-gray-300 mb-8">全球节点覆盖，稳定可靠，支持多种协议</p>
+            <a href="#pricing" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300">立即选购</a>
+        </div>
+    </section>
+
+    <!-- 特点展示 -->
+    <section class="py-20 px-6 bg-gray-800 bg-opacity-30">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass-effect p-6 rounded-xl">
+                <div class="text-blue-400 text-4xl mb-4">🌍</div>
+                <h3 class="text-xl font-bold text-white mb-3">全球节点</h3>
+                <p class="text-gray-300">覆盖多个国家和地区，满足各类需求</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl">
+                <div class="text-blue-400 text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold text-white mb-3">高速稳定</h3>
+                <p class="text-gray-300">专业线路优化，保证连接稳定性</p>
+            </div>
+            <div class="glass-effect p-6 rounded-xl">
+                <div class="text-blue-400 text-4xl mb-4">🔒</div>
+                <h3 class="text-xl font-bold text-white mb-3">安全可靠</h3>
+                <p class="text-gray-300">加密传输，保护数据安全</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价格方案 -->
+    <section id="pricing" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-white text-center mb-12 neon-text">选择您的方案</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 基础版 -->
+                <div class="glass-effect p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">基础版</h3>
+                    <div class="text-4xl font-bold text-blue-400 mb-6">¥99<span class="text-lg text-gray-400">/月</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-gray-300">✓ 5个并发代理</li>
+                        <li class="text-gray-300">✓ 10个国家节点</li>
+                        <li class="text-gray-300">✓ HTTP/HTTPS协议</li>
+                        <li class="text-gray-300">✓ 基础技术支持</li>
+                    </ul>
+                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">选择方案</button>
+                </div>
+                <!-- 专业版 -->
+                <div class="glass-effect p-8 rounded-xl transform scale-105 border-2 border-blue-400">
+                    <h3 class="text-2xl font-bold text-white mb-4">专业版</h3>
+                    <div class="text-4xl font-bold text-blue-400 mb-6">¥299<span class="text-lg text-gray-400">/月</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-gray-300">✓ 20个并发代理</li>
+                        <li class="text-gray-300">✓ 30个国家节点</li>
+                        <li class="text-gray-300">✓ 全协议支持</li>
+                        <li class="text-gray-300">✓ 24/7技术支持</li>
+                        <li class="text-gray-300">✓ IP自动轮换</li>
+                    </ul>
+                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">选择方案</button>
+                </div>
+                <!-- 企业版 -->
+                <div class="glass-effect p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-white mb-4">企业版</h3>
+                    <div class="text-4xl font-bold text-blue-400 mb-6">¥999<span class="text-lg text-gray-400">/月</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="text-gray-300">✓ 100个并发代理</li>
+                        <li class="text-gray-300">✓ 全球节点支持</li>
+                        <li class="text-gray-300">✓ 专属代理池</li>
+                        <li class="text-gray-300">✓ 专属客户经理</li>
+                        <li class="text-gray-300">✓ API集成支持</li>
+                    </ul>
+                    <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">联系我们</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 bg-opacity-50 py-12 px-6">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>© 2024 ProxyHub. 保留所有权利</p>
+        </div>
+    </footer>
+</body>
+</html>

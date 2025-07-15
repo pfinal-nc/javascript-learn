@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 - ProxyHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(66, 153, 225, 0.5);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 to-purple-900 min-h-screen text-gray-300">
+    <div class="min-h-screen">
+        <!-- 顶部导航栏 -->
+        <nav class="glass-effect fixed w-full z-10 px-6 py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-blue-400 neon-text">ProxyHub Admin</h1>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="dashboard.html" class="text-gray-300 hover:text-blue-400 transition-colors">返回控制台</a>
+                    <div class="flex items-center space-x-3 bg-blue-900 bg-opacity-50 rounded-full px-4 py-2">
+                        <span class="text-gray-300">管理员</span>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="管理员头像" class="w-8 h-8 rounded-full border-2 border-blue-400">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <div class="container mx-auto pt-24 px-6 pb-12">
+            <!-- IP统计卡片 -->
+            <div class="glass-effect rounded-xl p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-blue-400">IP统计</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="window.location.href='nodes.html'">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">总IP数</span>
+                            <span class="text-3xl font-bold text-blue-400">25</span>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">在线IP</span>
+                            <span class="text-3xl font-bold text-green-400">18</span>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300 text-lg">离线IP</span>
+                            <span class="text-3xl font-bold text-red-400">7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能卡片网格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 订单管理 -->
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-blue-400">订单管理</h3>
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>订单总数</span>
+                            <span class="text-xl font-bold text-blue-400">328</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>今日订单</span>
+                            <span class="text-xl font-bold text-green-400">12</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>今日交易额</span>
+                            <span class="text-xl font-bold text-yellow-400">¥3,299</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>待处理订单</span>
+                            <span class="text-xl font-bold text-purple-400">5</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <button onclick="window.location.href='orders.html'" class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white font-medium">管理订单</button>
+                        <div class="flex justify-between text-sm text-gray-400 px-1">
+                            <span>订单完成率: 98%</span>
+                            <span>平均处理时间: 2.5h</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 用户管理 -->
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-blue-400">用户管理</h3>
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>总用户数</span>
+                            <span class="text-xl font-bold text-blue-400">1,234</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>今日活跃</span>
+                            <span class="text-xl font-bold text-green-400">256</span>
+                        </div>
+                        <button class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white font-medium">管理用户</button>
+                    </div>
+                </div>
+
+                <!-- 权限管理 -->
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-blue-400">权限管理</h3>
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>角色数量</span>
+                            <span class="text-xl font-bold text-blue-400">5</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>权限规则</span>
+                            <span class="text-xl font-bold text-purple-400">24</span>
+                        </div>
+                        <button class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white font-medium">管理权限</button>
+                    </div>
+                </div>
+
+                <!-- 系统设置 -->
+                <div class="glass-effect rounded-xl p-6 card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-blue-400">系统设置</h3>
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>系统版本</span>
+                            <span class="text-xl font-bold text-blue-400">v2.1.0</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-blue-900 bg-opacity-30 rounded-lg p-3">
+                            <span>最后更新</span>
+                            <span class="text-xl font-bold text-yellow-400">2天前</span>
+                        </div>
+                        <button class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-white font-medium">系统配置</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 数据统计区域 -->
+            <div class="mt-12 glass-effect rounded-xl p-8">
+                <h2 class="text-2xl font-bold text-blue-400 mb-6">系统概览</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="text-gray-400">CPU使用率</div>
+                            <div class="text-2xl font-bold text-blue-400">45%</div>
+                        </div>
+                        <div class="mt-2 h-2 bg-blue-900 rounded-full">
+                            <div class="h-full w-5/12 bg-blue-400 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="text-gray-400">内存使用</div>
+                            <div class="text-2xl font-bold text-green-400">2.4GB</div>
+                        </div>
+                        <div class="mt-2 h-2 bg-blue-900 rounded-full">
+                            <div class="h-full w-7/12 bg-green-400 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="text-gray-400">磁盘空间</div>
+                            <div class="text-2xl font-bold text-purple-400">75%</div>
+                        </div>
+                        <div class="mt-2 h-2 bg-blue-900 rounded-full">
+                            <div class="h-full w-9/12 bg-purple-400 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 rounded-lg p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="text-gray-400">网络流量</div>
+                            <div class="text-2xl font-bold text-yellow-400">1.2MB/s</div>
+                        </div>
+                        <div class="mt-2 h-2 bg-blue-900 rounded-full">
+                            <div class="h-full w-3/12 bg-yellow-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

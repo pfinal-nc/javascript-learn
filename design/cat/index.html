@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 确保移动端正确渲染 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- ... existing code ... -->
+</head>
+<body class="bg-gradient-to-b from-indigo-100 to-pink-100 min-h-screen flex flex-col">
+  <header class="text-center text-2xl font-bold py-4 bg-gradient-to-r from-indigo-400 to-pink-400 text-white shadow">
+    猫猫的逻辑乐园
+  </header>
+  <main class="flex-1 flex flex-col items-center justify-center px-4">
+    <!-- 游戏说明部分，添加移动端适配 -->
+    <section class="bg-white/80 rounded-lg shadow-lg p-4 w-full max-w-md mb-6 sm:p-6">
+      <h2 class="text-lg font-semibold mb-2">游戏说明</h2>
+      <p class="text-gray-700 text-base">
+        通过关卡，学习分类、计数和逻辑思维。点击下方关卡开始游戏吧！
+      </p>
+    </section>
+    <!-- 关卡按钮部分，添加移动端适配 -->
+    <section class="w-full max-w-md">
+      <div class="grid grid-cols-2 gap-4 sm:gap-6">
+        <button class="rounded-xl bg-indigo-500 text-white py-3 font-semibold active:bg-indigo-700 shadow sm:py-4">关卡1</button>
+        <button class="rounded-xl bg-pink-500 text-white py-3 font-semibold active:bg-pink-700 shadow sm:py-4">关卡2</button>
+        <button class="rounded-xl bg-indigo-500 text-white py-3 font-semibold active:bg-indigo-700 shadow sm:py-4">关卡3</button>
+        <button class="rounded-xl bg-pink-500 text-white py-3 font-semibold active:bg-pink-700 shadow sm:py-4">关卡4</button>
+      </div>
+    </section>
+    <!-- 猫猫图片及操作按钮部分，添加移动端适配 -->
+    <section class="w-full max-w-md mt-8 flex flex-col items-center">
+      <!-- 奖杯图片 -->
+      <img src="trophy.png" alt="奖杯" class="w-1/4 h-auto mb-4">
+      <img src="cats.png" alt="猫猫" class="w-full h-auto max-h-60 object-contain mx-auto rounded-lg shadow sm:max-h-80">
+      <div class="flex gap-2 justify-center mt-4 sm:gap-4">
+        <button class="rounded-full bg-indigo-500 text-white px-6 py-2 shadow-md active:bg-indigo-700 sm:px-8 sm:py-3">操作1</button>
+        <button class="rounded-full bg-pink-500 text-white px-6 py-2 shadow-md active:bg-pink-700 sm:px-8 sm:py-3">操作2</button>
+      </div>
+      <div class="w-full mt-6">
+        <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div class="bg-indigo-500 h-2 rounded-full" style="width: 40%;"></div>
+        </div>
+        <div class="flex gap-1 justify-center mt-2 sm:gap-2">
+          <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/></svg>
+          <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/></svg>
+          <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/></svg>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="text-center text-xs text-gray-500 py-2">
+    &copy; 2024 猫猫的逻辑乐园
+  </footer>
+</body>
+</html>
