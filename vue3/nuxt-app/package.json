@@ -16,6 +16,8 @@
     "@iconify-json/simple-icons": "^1.2.44",
     "@nuxt/image": "^1.11.0",
     "@nuxt/ui": "^3.3.0",
+    "@nuxtjs/robots": "^5.4.0",
+    "@nuxtjs/sitemap": "^7.4.3",
     "@vueuse/motion": "^3.0.3",
     "nuxt": "^4.0.1"
   },
